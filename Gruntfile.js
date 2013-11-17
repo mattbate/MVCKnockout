@@ -97,13 +97,13 @@ module.exports = function(grunt) {
 
 		watch: {
 			main: {
-				files: [ 'Gruntfile.js', 'js/reveal.js', 'css/reveal.css' ],
+				files: [ 'Gruntfile.js', 'index.html', 'app.js' ],
 				tasks: 'default'
-			},
-			theme: {
-				files: [ 'css/theme/source/*.scss', 'css/theme/template/*.scss' ],
-				tasks: 'themes'
-			}
+			}//,
+//			theme: {
+//				files: [ 'css/theme/source/*.scss', 'css/theme/template/*.scss' ],
+//				tasks: 'themes'
+//			}
 		}
 
 	});

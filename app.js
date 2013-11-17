@@ -25,9 +25,31 @@ var liTmp = Handlebars.compile($("#litpl").html());
   {"name":"alex", "sex": "m", "age":25}
   ]};
  */
-var data = $("#theData").data("data-json");
-var liveData = data;
-$("#listWrap").html(liTmp(liveData));
+
+
+var dataMgr = function (obj){
+    var dataMgr = function(){    
+        console.log("hello");
+        var that = this
+        return that;
+    }
+    
+    this.options = obj;
+    var myvar = "a string";
+    //this.dataMgr()
+    //return {dataMgr:dataMgr() };
+}
+
+
+
+
+var matt = {};
+matt.sourceData = $("#theData").data("json");
+matt.liveData = matt.sourceData;
+
+var dataObj = new dataMgr(matt.liveData);
+
+$("#listWrap").html(liTmp(matt.liveData));
   
   
   $("#men").on("click", function(e){

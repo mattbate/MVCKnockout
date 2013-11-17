@@ -5,7 +5,7 @@
   
 
 <meta charset=utf-8 />
-<title>JS Bin</title>
+<title>mvc knockout test</title>
 </head>
 <body>
   <form name="mainform" id="mainform" action="#">
@@ -14,29 +14,7 @@
     <a href="#" id="young">under 24</a>
     <a href="#" id="middle">over 24</a>
     <a href="#" id="old">over 28</a>
-    <input type="text" data-json='{"items":[
-  {"name":"Brian", "sex": "m", "age":30}, 
-  {"name":"sharon", "sex": "f", "age":20}, 
-  {"name":"alex", "sex": "m", "age":25},
-  {"name":"Bert", "sex": "m", "age":30}, 
-  {"name":"kim", "sex": "f", "age":20}, 
-  {"name":"lex", "sex": "m", "age":25},
-  {"name":"Simon", "sex": "m", "age":30}, 
-  {"name":"stacey", "sex": "f", "age":20}, 
-  {"name":"ashton", "sex": "m", "age":25},
-  {"name":"Boris", "sex": "m", "age":30}, 
-  {"name":"Sarah", "sex": "f", "age":20}, 
-  {"name":"alex", "sex": "m", "age":25},
-  {"name":"Brian", "sex": "m", "age":30}, 
-  {"name":"sharon", sex: "f", "age":20}, 
-  {"name":"alex", "sex": "m", "age":25},
-  {"name":"Brian", "sex": "m", "age":30}, 
-  {"name":"sharon", "sex": "f", "age":20}, 
-  {"name":"alex", "sex": "m", "age":25},
-  {"name":"Brian", "sex": "m", "age":30}, 
-  {"name":"sharon", "sex": "f", "age":20}, 
-  {"name":"alex", "sex": "m", "age":25}
-]}' name="theData" id="theData" />
+    <input type="text" data-json='{"items":[{"name":"Brian", "sex": "m", "age":30},{"name":"sharon", "sex": "f", "age":20},{"name":"alex", "sex": "m", "age":25},{"name":"Bert", "sex": "m", "age":30},{"name":"kim", "sex": "f", "age":20},{"name":"lex", "sex": "m", "age":25},{"name":"Simon", "sex": "m", "age":30},{"name":"stacey", "sex": "f", "age":20}, {"name":"ashton", "sex": "m", "age":25},{"name":"Boris", "sex": "m", "age":30},{"name":"Sarah", "sex": "f", "age":20},{"name":"alex", "sex": "m", "age":25},{"name":"Brian", "sex": "m", "age":30},{"name":"sharon", "sex": "f", "age":20},{"name":"alex", "sex": "m", "age":25},{"name":"Brian", "sex": "m", "age":30},{"name":"sharon", "sex": "f", "age":20},{"name":"alex", "sex": "m", "age":25},{"name":"Brian", "sex": "m", "age":30},{"name":"sharon", "sex": "f", "age":20},{"name":"alex", "sex": "m", "age":25}]}' name="theData" id="theData" />
     <ul id="listWrap"></ul>
     
     
@@ -46,7 +24,8 @@
  {{#items}}<li>{{name}}</li>{{/items}}
   </script>
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+    
  <script src="http://cdnjs.cloudflare.com/ajax/libs/handlebars.js/1.0.0/handlebars.js"></script> 
-  
+  <script src="app.js"></script>
 </body>
 </html>

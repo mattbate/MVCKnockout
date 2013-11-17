@@ -1,7 +1,7 @@
 {
-  "name": "reveal.js",
+  "name": "mvcknockout",
   "version": "2.6.0-dev",
-  "description": "The HTML Presentation Framework",
+  "description": "MVC Experiment",
   "homepage": "http://lab.hakim.se/reveal-js",
   "subdomain": "revealjs",
   "scripts": {
