@@ -38,6 +38,7 @@ var dataMgr = function (obj) {
     this.getSourceData = function (){
         return this.sourceData
     }
+    
     this.sourceData = obj.items;
     this.liveData = this.sourceData;
     
