@@ -27,35 +27,52 @@ var liTmp = Handlebars.compile($("#litpl").html());
  */
 
 
-var dataMgr = function (obj){
-    var dataMgr = function(){    
+var dataMgr = function (obj) {
+    var afterDataFiltered = [];
+    var dataMgr = function () {
         console.log("hello");
+        this.sourceData
         var that = this
         return that;
     }
+    this.getSourceData = function (){
+        return this.sourceData
+    }
+    this.sourceData = obj.items;
+    this.liveData = this.sourceData;
     
-    this.options = obj;
-    var myvar = "a string";
-    //this.dataMgr()
+    this.filterData = function () { 
+        this.liveData = jQuery.grep(this.sourceData, function(a) {
+            return a.sex =="m";
+        });
+        for (var i = 0; i < afterDataFiltered.length; i++) {
+            afterDataFiltered[i](this);
+        }
+    };
+    
+    this.onFilterData = function (callback) {
+        afterDataFiltered.push(callback);
+    };
+    
+    dataMgr();
     //return {dataMgr:dataMgr() };
 }
 
 
 
 
-var matt = {};
-matt.sourceData = $("#theData").data("json");
-matt.liveData = matt.sourceData;
+//var matt = {};
+//matt.sourceData = $("#theData").data("json");
+//matt.liveData = matt.sourceData;
 
-var dataObj = new dataMgr(matt.liveData);
+var dataObj = new dataMgr($("#theData").data("json"));
 
-$("#listWrap").html(liTmp(matt.liveData));
-  
-  
+dataObj.onFilterData(function(object){
+    $("#listWrap").html(liTmp(object.liveData));
+});
+  $("#listWrap").html(liTmp(dataObj.getSourceData()));
   $("#men").on("click", function(e){
     $(this).css("color", "red");
-    liveData = jQuery.grep(data.items, function(a){
-       return a.sex =="m";
-    });
-    $("#listWrap").html(liTmp(liveData));
+    dataObj.filterData();
+   
   });
